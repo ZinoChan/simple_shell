@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * get_path_copy - Gets a copy of the PATH environment variable
- *
+ * get_path_copy - Gets a copy of the PATH env var
  * Return: A new allocated string containing a copy of the PATH variable,
- * or NULL if malloc fails or PATH is not set
+ * or NULL.
  */
 char *get_path_copy()
 {

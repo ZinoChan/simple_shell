@@ -2,10 +2,8 @@
 
 /**
  * my_strdup - Duplicates a string
- * @s: The string to duplicate
- *
- * Return: A pointer to a newly allocated string containing a copy of s,
- * or NULL if malloc fails
+ * @s: The string
+ * Return: new string pointer or NULL
  */
 char *my_strdup(const char *s)
 {

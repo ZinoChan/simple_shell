@@ -4,7 +4,6 @@
  * free_words - Frees a list of words.
  * @words: Pointer to an array of strings.
  * @num_of_words: Number of words in the array.
- *
  * This function frees each individual string in the array using the
  * free() function and finally frees the array itself using free().
  */

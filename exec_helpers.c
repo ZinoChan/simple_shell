@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * execute_cmd_with_execve - the name explains it
+ * exec_cmd_with_execve - the name explains it
  * @cmd: the command to execute
  * @arr_of_words: arr of commands
  * Return: void
 */
 
-void execute_cmd_with_execve(char *cmd, char **arr_of_words)
+void exec_cmd_with_execve(char *cmd, char **arr_of_words)
 {
 	if (execve(cmd, arr_of_words, NULL) == -1)
 	{

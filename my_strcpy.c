@@ -2,8 +2,8 @@
 
 /**
  * my_strcpy - copies a src to dest
- * @dest: destination str
- * @src: the original str
+ * @dest: dest str
+ * @src: the string
  * Return: the copied string
 */
 
