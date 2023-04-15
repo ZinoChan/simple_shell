@@ -15,7 +15,7 @@ void execute_by_forking(char **arr_of_words)
 	if (arr_of_words)
 	{
 		cmd = arr_of_words[0];
-		if(handle_various_cmds(arr_of_words) == 1)
+		if (handle_various_cmds(arr_of_words) == 1)
 			return;
 		cmd_to_exec = get_full_path(cmd);
 

@@ -2,7 +2,7 @@
 
 /**
  * my_atoi - implementation of built in atoi
- * @str: the string
+ * @string: the string
  * Return: integer
 */
 
@@ -10,7 +10,7 @@ int my_atoi(const char *string)
 {
 	int ans = 0, sign_val = 1;
 
-	while(*string == ' ' || *string == '\t' || *string == '\n')
+	while (*string == ' ' || *string == '\t' || *string == '\n')
 		string++;
 
 	if (*string == '-')
