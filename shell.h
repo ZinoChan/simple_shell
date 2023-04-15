@@ -8,6 +8,9 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <fcntl.h>
+#include <dirent.h>
+#include <signal.h>
 
 
 char *my_strcpy(char *dest, const char *src);
@@ -30,5 +33,8 @@ void wait_kid_process(pid_t pid, int *status);
 /* String manipulation */
 char *my_strcat(char *dest, const char *src);
 char *my_strdup(const char *s);
+
+/**handle exit , setenv, unsetenv*/
+int handle_various_cmds(char **arr_of_words);
 
 #endif
