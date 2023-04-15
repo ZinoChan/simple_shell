@@ -33,8 +33,12 @@ void wait_kid_process(pid_t pid, int *status);
 /* String manipulation */
 char *my_strcat(char *dest, const char *src);
 char *my_strdup(const char *s);
+int my_strcmp(const char *first, const char *second);
 
 /**handle exit , setenv, unsetenv*/
 int handle_various_cmds(char **arr_of_words);
+void handle_the_env();
+int my_setenv(const char *env_name, const char *env_value, int env_overwrite_val);
+int my_unsetenv(const char *env_name);
 
 #endif
