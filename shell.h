@@ -6,6 +6,8 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
 
 
 char *my_strcpy(char *dest, const char *src);
@@ -22,7 +24,7 @@ char *get_path_copy();
 /*forking*/
 void execute_by_forking(char **arr_of_words);
 char *get_full_path(const char *cmd);
-void execute_cmd_with_execve(char *cmd, char **arr_of_words);
+void exec_cmd_with_execve(char *cmd, char **arr_of_words);
 void wait_kid_process(pid_t pid, int *status);
 
 /* String manipulation */
