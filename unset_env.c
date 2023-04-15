@@ -2,10 +2,8 @@
 
 /**
  * my_unsetenv - Unset an environment variable.
- *
- * @env_name: The name of the environment variable to unset.
- *
- * Return: 0 on success, -1 on failure.
+ * @env_name: The name of the env var to unset.
+ * Return: 0 on success, or -1.
  */
 int my_unsetenv(const char *env_name)
 {

@@ -2,15 +2,13 @@
 
 /**
  * my_setenv - Set the value of an environment variable.
- *
- * @env_name: The name of the environment variable.
- * @env_value: The value to set the environment variable to.
- * @env_overwrite_val: A flag that determines whether to overwrite the
- *                     environment variable if it already exists.
- *
- * Return: 0 on success, -1 on failure.
+ * @env_name: name of env var.
+ * @env_value: The val to set the env var to.
+ * @env_overwrite_val: flag
+ * Return: 0 on success, or -1.
  */
-int my_setenv(const char *env_name, const char *env_value, int env_overwrite_val)
+int my_setenv(const char *env_name, const char *env_value,
+			int env_overwrite_val)
 {
 	int final_result;
 

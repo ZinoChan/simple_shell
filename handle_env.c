@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * handle_the_env - Prints the environment variables.
+ * handle_the_env - Prints the env variables.
+ * Return: void
  */
 void handle_the_env(void)
 {

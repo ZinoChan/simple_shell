@@ -2,11 +2,9 @@
 
 /**
  * my_strcmp - Compares two strings.
- *
- * @first: The first string to be compared.
- * @second: The second string to be compared.
- *
- * Return: An integer less than, equal to, or greater than zero
+ * @first: The first string
+ * @second: The second string
+ * Return: An integer;
  */
 int my_strcmp(const char *first, const char *second)
 {
