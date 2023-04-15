@@ -34,6 +34,7 @@ void wait_kid_process(pid_t pid, int *status);
 char *my_strcat(char *dest, const char *src);
 char *my_strdup(const char *s);
 int my_strcmp(const char *first, const char *second);
+int my_atoi(const char *string);
 
 /**handle exit , setenv, unsetenv*/
 int handle_various_cmds(char **arr_of_words);
