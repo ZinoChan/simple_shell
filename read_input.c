@@ -2,11 +2,9 @@
 
 /**
  * read_input - Reads a line of input from stdin.
- *
  * This function prompts the user to enter input, reads a line of input
  * from stdin using the getline() function, and returns a pointer to the
  * input string.
- *
  * Return: A pointer to the input string, or NULL on error or empty line.
  */
 char *read_input()
@@ -16,7 +14,8 @@ char *read_input()
 	ssize_t total_read;
 
 	printf("$ ");
-	total_read = getline(&input_holder, &alloc_size, stdin);
+	fflush(stdout);
+	total_read = my_getline(&input_holder, &alloc_size, stdin);
 
 	if (total_read == -1)
 	{
