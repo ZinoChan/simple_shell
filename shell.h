@@ -12,6 +12,8 @@
 #include <dirent.h>
 #include <signal.h>
 
+#define STORAGE_SIZE 1024
+
 
 char *my_strcpy(char *dest, const char *src);
 char **split_string(char *str, const char *str_separator, int *num_of_words);
@@ -36,10 +38,21 @@ char *my_strdup(const char *s);
 int my_strcmp(const char *first, const char *second);
 int my_atoi(const char *string);
 
+/*Get line*/
+ssize_t my_getline(char **the_storage_ptr, size_t *size_of_storage,
+FILE *read_stream);
+int read_from_input(char *char_to_read);
+void *my_realloc(void* old_ptr, size_t size);
+void update_buff(char **buff_ptr, size_t *buff_size, char *buffer, size_t idx);
+void* my_memcpy(void* destination, const void* source,
+size_t num_of_bytes);
+
 /**handle exit , setenv, unsetenv*/
 int handle_various_cmds(char **arr_of_words);
 void handle_the_env();
 int my_setenv(const char *env_name, const char *env_value, int env_overwrite_val);
 int my_unsetenv(const char *env_name);
+
+
 
 #endif
