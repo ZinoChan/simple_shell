@@ -40,8 +40,11 @@ $ exit
 
 The following is a list of the files included in the Simple Shell project:
 
-shell.c - execute source code
-shell.h - prototypes
+| File Name | Description |
+| ------ | ------ |
+| shell.c | execute source code. |
+| shell.h | prototypes |
+
 
 ### Authors
 - ZinoChan
