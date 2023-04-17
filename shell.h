@@ -43,19 +43,29 @@ int my_atoi(const char *string);
 ssize_t my_getline(char **the_storage_ptr, size_t *size_of_storage,
 FILE *read_stream);
 int read_from_input(char *char_to_read);
-void *my_realloc(void* old_ptr, size_t size);
+void *my_realloc(void *old_ptr, size_t size);
 void update_buff(char **buff_ptr, size_t *buff_size, char *buffer, size_t idx);
-void* my_memcpy(void* destination, const void* source,
-size_t num_of_bytes);
+void *my_memcpy(void *destination, const void *source, size_t num_of_bytes);
 
 
 /**handle exit , setenv, unsetenv*/
 int handle_various_cmds(char **arr_of_words);
-void handle_the_env();
-int my_setenv(const char *env_name, const char *env_value, int env_overwrite_val);
+void handle_the_env(void);
+int my_setenv(const char *env_name, const char *env_value,
+		int env_overwrite_val);
 int my_unsetenv(const char *env_name);
 
 /*handle cd*/
 void my_cd(char **arr_of_words);
+
+/*cd helper functions*/
+char *env_vars(const char *env_name, char **env_pointer);
+void isError(const char *msg);
+char *get_dir(const char *initial_path);
+char *handle_cwd();
+void switch_current_directory(const char *directory);
+
+/*String comparison function*/
+int my_strncmp(const char *st1, const char *st2, size_t number);
 
 #endif
