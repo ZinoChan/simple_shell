@@ -39,5 +39,10 @@ int handle_various_cmds(char **arr_of_words)
 			perror("Usage: unsetenv VARIABLE\n");
 		cmd_was_handled = 1;
 	}
+	else if (my_strcmp(cmd, "cd") == 0)
+	{
+		my_cd(arr_of_words);
+		cmd_was_handled = 1;
+	}
 	return (cmd_was_handled);
 }
