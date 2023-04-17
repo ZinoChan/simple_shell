@@ -13,6 +13,7 @@
 #include <signal.h>
 
 #define STORAGE_SIZE 1024
+extern char **environ;
 
 
 char *my_strcpy(char *dest, const char *src);

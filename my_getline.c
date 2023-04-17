@@ -1,5 +1,12 @@
 #include "shell.h"
 
+/**
+ * my_getline - a custom getline
+ * @the_storage_ptr: a storage pointer
+ * @size_of_storage: defined as 1024
+ * @read_stream: the file being read
+ * Return: writen line length
+*/
 
 ssize_t my_getline(char **the_storage_ptr, size_t *size_of_storage,
 FILE *read_stream)
