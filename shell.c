@@ -10,7 +10,7 @@
 int main(void)
 {
 	char *input_holder = NULL;
-	const char *str_seperator = " ";
+	const char *str_seperator = " \t\n;&|";
 	int num_of_words = 0;
 	char **arr_of_words = NULL;
 
