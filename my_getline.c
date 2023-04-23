@@ -12,7 +12,7 @@ ssize_t my_getline(char **the_storage_ptr, size_t *size_of_storage,
 FILE *read_stream)
 {
 	ssize_t line_length = 0, starting_input = 0;
-	char *storage = NULL, curr_char;
+	char *storage = NULL, curr_char = ' ';
 
 	if (starting_input == 0)
 		fflush(read_stream);
