@@ -68,4 +68,7 @@ void switch_current_directory(const char *directory);
 /*String comparison function*/
 int my_strncmp(const char *st1, const char *st2, size_t number);
 
+/*execute multiple commands*/
+void exec_multi_cmds(char *user_prompt);
+
 #endif
