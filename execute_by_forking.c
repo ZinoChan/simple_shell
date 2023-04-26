@@ -32,14 +32,14 @@ void execute_bin_ls(char **arr_of_words)
  * execute_by_forking - executes a command using the fork-exec
  * @arr_of_words: arr containing commands
  * @sh_name: program name
- * Return: void
+ * Return: err code
 */
 
-void execute_by_forking(char **arr_of_words, char *sh_name)
+int execute_by_forking(char **arr_of_words, char *sh_name, int cnt)
 {
-	char *cmd = NULL, *cmd_to_exec = NULL;
+	char *cmd = NULL, *cmd_to_exec = NULL, *curr_cnt = NULL;
 	pid_t pid;
-	int curr_status;
+	int curr_status, ex_code;
 
 	if (arr_of_words)
 	{
@@ -47,31 +47,32 @@ void execute_by_forking(char **arr_of_words, char *sh_name)
 		if (my_strcmp(cmd, "/bin/ls") == 0)
 		{
 			execute_bin_ls(arr_of_words);
-			return;
+			return (0);
 		}
 		if (handle_various_cmds(arr_of_words) == 1)
-			return;
+			return (0);
 		cmd_to_exec = get_full_path(cmd);
 
 		if (!cmd_to_exec)
 		{
+			curr_cnt = intToString(cnt);
 			if (!is_valid_word(cmd))
-				p_the_err(sh_name, NULL, "No such file or directory\n");
+				p_the_err(curr_cnt, sh_name, NULL, "No such file or directory\n");
 			else
-				p_the_err(sh_name, cmd, "not found\n");
-			return;
+				p_the_err(curr_cnt, sh_name, cmd, "not found\n");
+			return (127);
 		}
 
 		pid = fork();
 		if (pid == 0)
 			exec_cmd_with_execve(cmd_to_exec, arr_of_words);
 		else if (pid < 0)
-		{
-			perror("Error forking");
-			return;
-		}
-		else
-			wait_kid_process(pid, &curr_status);
+			return (errno);
+
+		wait_kid_process(pid, &curr_status);
+		if (WIFEXITED(curr_status))
+			ex_code = (WEXITSTATUS(curr_status));
 	}
 	free(cmd_to_exec);
+	return (ex_code);
 }

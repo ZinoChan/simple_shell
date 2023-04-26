@@ -32,16 +32,21 @@ void wait_kid_process(pid_t pid, int *status)
 		return;
 	}
 }
-
+/**
+ * is_valid_word - check if workd valid
+ * @str: word
+ * Return: 1 if valid 0 no
+*/
 int is_valid_word(char *str)
 {
 	int i = 0;
+
 	while (str[i] != '\0')
 	{
 		if (!isalnum(str[i]) && str[i] != '-' && str[i] != '_' && str[i] != '.')
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
