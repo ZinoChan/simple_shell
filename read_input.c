@@ -13,7 +13,6 @@ char *read_input()
 	size_t alloc_size = 0;
 	ssize_t total_read;
 
-	printf("$ ");
 	fflush(stdout);
 	total_read = my_getline(&input_holder, &alloc_size, stdin);
 

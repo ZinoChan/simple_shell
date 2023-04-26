@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * main - Entry point for shell.
  *@argc: arg number
@@ -8,15 +9,18 @@
  */
 
 
+
+
 int main(int argc, char **argv)
 {
 	char *input_holder = NULL;
-	(void)argv;
+	(void)argv, (void)argc;
 
-	if (argc == 1)
+	if (isatty(STDIN_FILENO))
 	{
 		while (1)
 		{
+			printf("$ ");
 			input_holder = read_input();
 			if (input_holder == NULL)
 			{
@@ -30,16 +34,15 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		input_holder = read_input();
-		if (input_holder == NULL)
+		while ((input_holder = read_input()) != NULL)
 		{
-			printf("\n");
-			return (-1);
+			exec_multi_cmds(input_holder);
+			free(input_holder);
 		}
-		exec_multi_cmds(input_holder);
-		free(input_holder);
+
 		input_holder = NULL;
 	}
 
 	return (0);
 }
+
