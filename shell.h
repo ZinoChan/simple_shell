@@ -76,7 +76,7 @@ int exec_multi_cmds(char *user_prompt, char *sh_name, int cnt);
 
 void p_the_err(char *cnt, char *sh_name, char *cmd, char *msg);
 int is_valid_word(char *str);
-char* intToString(int num);
-void handle_sigint();
+char *intToString(int num);
+void handle_sigint(void);
 
 #endif
