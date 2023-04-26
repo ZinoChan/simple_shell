@@ -32,6 +32,7 @@ void execute_bin_ls(char **arr_of_words)
  * execute_by_forking - executes a command using the fork-exec
  * @arr_of_words: arr containing commands
  * @sh_name: program name
+ * @cnt: cmonad count
  * Return: err code
 */
 

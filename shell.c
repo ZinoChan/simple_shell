@@ -2,6 +2,7 @@
 
 /**
  * handle_sig - handle signal
+ * @sig: signal
  * Return: void.
  */
 void handle_sig(int sig)
