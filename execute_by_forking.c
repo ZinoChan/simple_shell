@@ -40,7 +40,6 @@ void execute_by_forking(char **arr_of_words, char *sh_name)
 	char *cmd = NULL, *cmd_to_exec = NULL;
 	pid_t pid;
 	int curr_status;
-	char *error_msg;
 
 	if (arr_of_words)
 	{
