@@ -50,3 +50,12 @@ char *intToString(int num)
 	str[digitCount] = '\0';
 	return (str);
 }
+
+int my_isdig(int c)
+{
+    if (c >= '0' && c <= '9')
+        return (1);
+    else
+        return (0);
+}
+

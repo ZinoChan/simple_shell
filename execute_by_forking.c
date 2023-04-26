@@ -36,7 +36,7 @@ void execute_bin_ls(char **arr_of_words)
  * Return: err code
 */
 
-int execute_by_forking(char **arr_of_words, char *sh_name, int cnt)
+int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n)
 {
 	char *cmd = NULL, *cmd_to_exec = NULL, *curr_cnt = NULL;
 	pid_t pid;
@@ -50,7 +50,7 @@ int execute_by_forking(char **arr_of_words, char *sh_name, int cnt)
 			execute_bin_ls(arr_of_words);
 			return (0);
 		}
-		if (handle_various_cmds(arr_of_words) == 1)
+		if (handle_various_cmds(arr_of_words, user_prompt, sh_name, cnt, n) == 1)
 			return (0);
 		cmd_to_exec = get_full_path(cmd);
 
@@ -61,6 +61,7 @@ int execute_by_forking(char **arr_of_words, char *sh_name, int cnt)
 				p_the_err(curr_cnt, sh_name, NULL, "not found\n");
 			else
 				p_the_err(curr_cnt, sh_name, cmd, "not found\n");
+			free(curr_cnt);
 			return (127);
 		}
 

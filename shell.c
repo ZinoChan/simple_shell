@@ -8,7 +8,7 @@
 void handle_sig(int sig)
 {
 	(void)sig;
-	write(STDOUT_FILENO, "\n$ ", 3);
+	write(STDOUT_FILENO, "\n$ ", 4);
 }
 
 
@@ -50,7 +50,6 @@ int main(int argc, char **argv)
 	}
 
 	input_holder = NULL;
-
 	return (exit_code);
 }
 

@@ -6,18 +6,14 @@
  * Return: 1 if one of the cmd is found or 0
 */
 
-int handle_various_cmds(char **arr_of_words)
+int handle_various_cmds(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n)
 {
 	char *cmd = arr_of_words[0];
-	int exit_status, cmd_was_handled = 0;
+	int cmd_was_handled = 0;
 
 	if (my_strcmp(cmd, "exit") == 0)
-	{
-		exit_status = errno;
-		if (arr_of_words[1])
-			exit_status = my_atoi(arr_of_words[1]);
-		exit(exit_status);
-	}
+		handle_exit_with_status(arr_of_words, user_prompt, sh_name, cnt, n);
+
 	else if (my_strcmp(cmd, "env") == 0)
 	{
 		handle_the_env();
