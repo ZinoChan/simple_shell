@@ -18,5 +18,4 @@ void p_the_err(char *sh_name, char *cmd, char *msg)
     }
     write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, msg, get_strlen(msg));
-	exit(127);
 }
