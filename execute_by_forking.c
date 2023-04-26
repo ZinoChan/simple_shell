@@ -58,7 +58,7 @@ int execute_by_forking(char **arr_of_words, char *sh_name, int cnt)
 		{
 			curr_cnt = intToString(cnt);
 			if (!is_valid_word(cmd))
-				p_the_err(curr_cnt, sh_name, NULL, "No such file or directory\n");
+				p_the_err(curr_cnt, sh_name, NULL, "not found\n");
 			else
 				p_the_err(curr_cnt, sh_name, cmd, "not found\n");
 			return (127);
