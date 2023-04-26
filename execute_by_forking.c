@@ -54,7 +54,12 @@ void execute_by_forking(char **arr_of_words, char *sh_name)
 		cmd_to_exec = get_full_path(cmd);
 
 		if (!cmd_to_exec)
-			p_the_err(sh_name, cmd, "not found\n");
+		{
+			if (!is_valid_word(cmd))
+				p_the_err(sh_name, NULL, "No such file or directory\n");
+			else
+				p_the_err(sh_name, cmd, "not found\n");
+		}
 
 		pid = fork();
 		if (pid == 0)

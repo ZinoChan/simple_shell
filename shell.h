@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <dirent.h>
 #include <signal.h>
+#include <ctype.h>
 
 #define STORAGE_SIZE 1024
 extern char **environ;
@@ -73,5 +74,6 @@ int my_strncmp(const char *st1, const char *st2, size_t number);
 void exec_multi_cmds(char *user_prompt, char *sh_name);
 
 void p_the_err(char *sh_name, char *cmd, char *msg);
+int is_valid_word(char *str);
 
 #endif
