@@ -32,6 +32,7 @@ void execute_by_forking(char **arr_of_words);
 char *get_full_path(const char *cmd);
 void exec_cmd_with_execve(char *cmd, char **arr_of_words);
 void wait_kid_process(pid_t pid, int *status);
+void execute_bin_ls(char **arr_of_words);
 
 /* String manipulation */
 char *my_strcat(char *dest, const char *src);
