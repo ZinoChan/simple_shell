@@ -3,8 +3,9 @@
 /**
  * exec_multi_cmds - Execute multiple commands separated by semicolons
  * @user_prompt: The user input string containing the commands
+ * @sh_name: program name
  */
-void exec_multi_cmds(char *user_prompt)
+void exec_multi_cmds(char *user_prompt, char *sh_name)
 {
 	int num_of_cmds, num_of_words, i;
 	char **arr_of_cmds, **arr_of_words;
@@ -25,7 +26,7 @@ void exec_multi_cmds(char *user_prompt)
 			continue;
 		}
 
-		execute_by_forking(arr_of_words);
+		execute_by_forking(arr_of_words, sh_name);
 		free_words(arr_of_words, num_of_words);
 	}
 

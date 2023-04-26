@@ -14,7 +14,7 @@
 int main(int argc, char **argv)
 {
 	char *input_holder = NULL;
-	(void)argv, (void)argc;
+	(void)argc;
 
 	if (isatty(STDIN_FILENO))
 	{
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 				printf("\n");
 				return (-1);
 			}
-			exec_multi_cmds(input_holder);
+			exec_multi_cmds(input_holder, argv[0]);
 			free(input_holder);
 			input_holder = NULL;
 		}
@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	{
 		while ((input_holder = read_input()) != NULL)
 		{
-			exec_multi_cmds(input_holder);
+			exec_multi_cmds(input_holder, argv[0]);
 			free(input_holder);
 		}
 

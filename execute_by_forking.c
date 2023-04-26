@@ -31,14 +31,16 @@ void execute_bin_ls(char **arr_of_words)
 /**
  * execute_by_forking - executes a command using the fork-exec
  * @arr_of_words: arr containing commands
+ * @sh_name: program name
  * Return: void
 */
 
-void execute_by_forking(char **arr_of_words)
+void execute_by_forking(char **arr_of_words, char *sh_name)
 {
 	char *cmd = NULL, *cmd_to_exec = NULL;
 	pid_t pid;
 	int curr_status;
+	char *error_msg;
 
 	if (arr_of_words)
 	{
@@ -53,10 +55,7 @@ void execute_by_forking(char **arr_of_words)
 		cmd_to_exec = get_full_path(cmd);
 
 		if (!cmd_to_exec)
-		{
-			printf("%s: Command not found\n", cmd);
-			return;
-		}
+			p_the_err(sh_name, cmd, "not found\n");
 
 		pid = fork();
 		if (pid == 0)

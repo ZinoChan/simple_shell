@@ -28,7 +28,7 @@ char *get_dir_path(const char *path, const char *cmd);
 char *get_path_copy();
 
 /*forking*/
-void execute_by_forking(char **arr_of_words);
+void execute_by_forking(char **arr_of_words, char *sh_name);
 char *get_full_path(const char *cmd);
 void exec_cmd_with_execve(char *cmd, char **arr_of_words);
 void wait_kid_process(pid_t pid, int *status);
@@ -70,6 +70,8 @@ void switch_current_directory(const char *directory);
 int my_strncmp(const char *st1, const char *st2, size_t number);
 
 /*execute multiple commands*/
-void exec_multi_cmds(char *user_prompt);
+void exec_multi_cmds(char *user_prompt, char *sh_name);
+
+void p_the_err(char *sh_name, char *cmd, char *msg);
 
 #endif
