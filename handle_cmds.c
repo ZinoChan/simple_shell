@@ -13,7 +13,7 @@ int handle_various_cmds(char **arr_of_words)
 
 	if (my_strcmp(cmd, "exit") == 0)
 	{
-		exit_status = 0;
+		exit_status = errno;
 		if (arr_of_words[1])
 			exit_status = my_atoi(arr_of_words[1]);
 		exit(exit_status);
