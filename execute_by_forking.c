@@ -74,6 +74,6 @@ char *sh_name, int cnt, int n)
 		if (WIFEXITED(curr_status))
 			ex_code = (WEXITSTATUS(curr_status));
 	}
-	/*free(cmd_to_exec)*/;
+	/*free(cmd_to_exec)*/
 	return (ex_code);
 }
