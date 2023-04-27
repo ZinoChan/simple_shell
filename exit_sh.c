@@ -2,11 +2,11 @@
 
 /**
  * handle_exit_with_status - Handles exit built-in command.
- * @arr_of_words: Array of user command and arguments.
- * @user_prompt: Pointer to user input.
- * @sh_name: The name of the shell.
- * @cntr: The command counter.
- * @n: The number of arguments.
+ * @arr_of_words: commands
+ * @user_prompt: user input.
+ * @sh_name: program name
+ * @cntr: conter of commands
+ * @n: number of commands
  * Return: void.
  */
 void handle_exit_with_status(char **arr_of_words, char *user_prompt,

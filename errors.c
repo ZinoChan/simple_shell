@@ -2,11 +2,11 @@
 
 
 /**
- * p_the_err - prints error message to standard error
- * @cnt: command count
- * @sh_name: shell name
- * @cmd: command
- * @msg: error message
+ * p_the_err - errrorrorrooror
+ * @sh_name: naaaaaaame
+ * @cmd: cmmmmmmmd
+ * @msg: msssssg
+ * @cnt: cmonad count
  * Return: void
 */
 void p_the_err(char *cnt, char *sh_name, char *cmd, char *msg)
@@ -24,12 +24,12 @@ void p_the_err(char *cnt, char *sh_name, char *cmd, char *msg)
 }
 
 /**
- * ex_err - prints error message for an invalid argument
- * @arr_of_words: array of command line arguments
- * @cntr: command count
- * @sh_name: shell name
+ * ex_err- errrorrorrooror
+ * @sh_name: naaaaaaame
+ * @arr_of_words: akfjalal
+ * @cntr: cmonad count
  * Return: void
- */
+*/
 void ex_err(char **arr_of_words, int cntr, char *sh_name)
 {
 	char *err_code = intToString(cntr);
@@ -42,6 +42,6 @@ void ex_err(char **arr_of_words, int cntr, char *sh_name)
 	write(STDOUT_FILENO, ": Illegal number: ", 19);
 	write(STDOUT_FILENO, arr_of_words[1], get_strlen(arr_of_words[1]));
 	write(STDOUT_FILENO, "\n", 2);
-
-	free(err_code);
+	if (err_code != NULL)
+		free(err_code);
 }

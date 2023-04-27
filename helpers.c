@@ -1,36 +1,34 @@
 #include "shell.h"
 
 /**
- * intToString - Convert an integer to a string
- *
- * @num: The integer to convert
- *
- * Return: A pointer to the resulting string
+ * intToString - int to a str
+ * @num: integg
+ * Return: str
  */
 char *intToString(int num)
 {
-	int i = 0, j = 0, isNeg = 0, digitCount = 0, temp;
+	int negative_num = 0, digCntr = 0, tmp, i = 0, j = 0;
 	char *str;
 
 	if (num < 0)
 	{
-		isNeg = 1;
+		negative_num = 1;
 		num *= -1;
-		digitCount++;
+		digCntr++;
 	}
-	temp = num;
-	while (temp > 0)
+	tmp = num;
+	while (tmp > 0)
 	{
-		digitCount++;
-		temp /= 10;
+		digCntr++;
+		tmp /= 10;
 	}
-	str = (char *) malloc(sizeof(char) * (digitCount + 1));
+	str = (char *) malloc(sizeof(char) * (digCntr + 1));
 	do {
 		str[i++] = (num % 10) + '0';
 		num /= 10;
 	} while (num);
 
-	if (isNeg)
+	if (negative_num)
 	{
 		str[i++] = '-';
 	}
@@ -39,24 +37,22 @@ char *intToString(int num)
 	i = 0;
 	while (i < j)
 	{
-		char temp = str[i];
+		char tmp = str[i];
 
 		str[i] = str[j];
-		str[j] = temp;
+		str[j] = tmp;
 		i++;
 		j--;
 	}
 
-	str[digitCount] = '\0';
+	str[digCntr] = '\0';
 	return (str);
 }
 
 /**
- * my_isdig - check if a character is a digit
- *
- * @c: the character to check
- *
- * Return: 1 if the character is a digit, 0 otherwise
+ * my_isdig- is digit
+ * @c: integg
+ * Return: bool
  */
 int my_isdig(int c)
 {
