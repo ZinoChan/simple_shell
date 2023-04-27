@@ -15,7 +15,7 @@ char *sh_name, int cnt, int n)
 {
 	char *cmd = arr_of_words[0];
 	int cmd_was_handled = 0;
-	(void)sh_name, (void)cnt, (void)n;
+	(void)sh_name, (void)cnt, (void)n, (void)user_prompt;
 
 	if (my_strcmp(cmd, "env") == 0)
 	{
