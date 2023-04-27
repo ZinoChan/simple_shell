@@ -14,7 +14,7 @@ char *read_input()
 	ssize_t total_read;
 
 	fflush(stdout);
-	total_read = my_getline(&input_holder, &alloc_size, stdin);
+	total_read = getline(&input_holder, &alloc_size, stdin);
 
 	if (total_read == -1)
 	{
