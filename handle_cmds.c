@@ -15,9 +15,15 @@ char *sh_name, int cnt, int n)
 {
 	char *cmd = arr_of_words[0];
 	int cmd_was_handled = 0;
+	(void)sh_name, (void)cnt;
 
 	if (my_strcmp(cmd, "exit") == 0)
-		handle_exit_with_status(arr_of_words, user_prompt, sh_name, cnt, n);
+	{
+		/*handle_exit_with_status(arr_of_words, user_prompt, sh_name, cnt, n);*/
+		free(user_prompt);
+		free_words(arr_of_words, n);
+		exit(EXIT_SUCCESS);
+	}
 
 	else if (my_strcmp(cmd, "env") == 0)
 	{

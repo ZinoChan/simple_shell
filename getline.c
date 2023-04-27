@@ -28,7 +28,7 @@ FILE *read_stream)
 		if (!read_from_input(&curr_char))
 		{
 			free(storage);
-			return (-1);
+			exit(EXIT_SUCCESS);
 		}
 
 		if (starting_input >= STORAGE_SIZE)
