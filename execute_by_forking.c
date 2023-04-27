@@ -1,7 +1,5 @@
 #include "shell.h"
 
-
-
 /**
  * execute_bin_ls - handle /bin/ls
  * @arr_of_words: arr containing commands
@@ -27,8 +25,6 @@ void execute_bin_ls(char **arr_of_words)
 	else
 		waitpid(pid, &curr_status, 0);
 }
-
-
 
 /**
  * execute_by_forking - executes a command using the fork-exec
@@ -65,10 +61,8 @@ char *sh_name, int cnt, int n)
 			if (!is_valid_word(cmd))
 				p_the_err(curr_cnt, sh_name, NULL, "not found\n");
 			else
-			{
 				p_the_err(curr_cnt, sh_name, cmd, "not found\n");
-				free(curr_cnt);
-			}
+			free(curr_cnt);
 			return (127);
 		}
 		pid = fork();
@@ -80,6 +74,6 @@ char *sh_name, int cnt, int n)
 		if (WIFEXITED(curr_status))
 			ex_code = (WEXITSTATUS(curr_status));
 	}
-	/*free(cmd_to_exec)*/
+	/*free(cmd_to_exec)*/;
 	return (ex_code);
 }
