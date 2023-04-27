@@ -33,10 +33,13 @@ void execute_bin_ls(char **arr_of_words)
  * @arr_of_words: arr containing commands
  * @sh_name: program name
  * @cnt: cmonad count
+ * @n: ------------------
+ * @user_prompt: _______________
  * Return: err code
 */
 
-int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n)
+int execute_by_forking(char **arr_of_words, char *user_prompt,
+char *sh_name, int cnt, int n)
 {
 	char *cmd = NULL, *cmd_to_exec = NULL, *curr_cnt = NULL;
 	pid_t pid;
@@ -60,21 +63,22 @@ int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name, in
 			if (!is_valid_word(cmd))
 				p_the_err(curr_cnt, sh_name, NULL, "not found\n");
 			else
+			{
 				p_the_err(curr_cnt, sh_name, cmd, "not found\n");
-			free(curr_cnt);
+				free(curr_cnt);
+			}
 			return (127);
 		}
-
 		pid = fork();
 		if (pid == 0)
 			exec_cmd_with_execve(cmd_to_exec, arr_of_words);
 		else if (pid < 0)
 			return (errno);
-
 		wait_kid_process(pid, &curr_status);
 		if (WIFEXITED(curr_status))
 			ex_code = (WEXITSTATUS(curr_status));
 	}
-	free(cmd_to_exec);
+	/*free(cmd_to_exec);*/
+	cmd_to_exec = NULL;
 	return (ex_code);
 }

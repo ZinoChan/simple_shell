@@ -3,10 +3,15 @@
 /**
  * handle_various_cmds - handle env, setenv, unsetenv cmds
  * @arr_of_words: the cmds provided
+ * @sh_name: program name
+ * @cnt: cmonad count
+ * @n: ------------------
+ * @user_prompt: _______________
  * Return: 1 if one of the cmd is found or 0
 */
 
-int handle_various_cmds(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n)
+int handle_various_cmds(char **arr_of_words, char *user_prompt,
+char *sh_name, int cnt, int n)
 {
 	char *cmd = arr_of_words[0];
 	int cmd_was_handled = 0;

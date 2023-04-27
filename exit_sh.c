@@ -1,13 +1,15 @@
 #include "shell.h"
 /**
  * handle_exit_with_status - Handles exit built-in command.
- * @cmd: User command and arguments.
- * @input: Pointer to user input.
- * @argv: The command line arguments array.
- * @c: The command line arguments count.
+ * @arr_of_words: commands
+ * @user_prompt: user input.
+ * @sh_name: program name
+ * @cntr: conter of commands
+ * @n: number of commands
  * Return: void.
  */
-void handle_exit_with_status(char **arr_of_words, char *user_prompt, char *sh_name, int cntr, int n)
+void handle_exit_with_status(char **arr_of_words, char *user_prompt,
+char *sh_name, int cntr, int n)
 {
 	int ex_stat, i = 0;
 

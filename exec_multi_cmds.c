@@ -28,7 +28,8 @@ int exec_multi_cmds(char *user_prompt, char *sh_name, int cnt)
 			continue;
 		}
 
-		ex_code = execute_by_forking(arr_of_words, user_prompt, sh_name, cnt, num_of_words);
+		ex_code = execute_by_forking(arr_of_words, user_prompt, sh_name,
+		cnt, num_of_words);
 		free_words(arr_of_words, num_of_words);
 	}
 

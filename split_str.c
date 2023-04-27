@@ -46,6 +46,7 @@ char **split_string(char *str, const char *str_separator, int *num_of_words)
 		my_strcpy(arr_of_words[i], word);
 		word = strtok(NULL, str_separator);
 	}
+
 	arr_of_words[i] = NULL;
 	free(str_copy);
 	return (arr_of_words);

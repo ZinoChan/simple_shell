@@ -30,7 +30,8 @@ char *get_dir_path(const char *path, const char *cmd);
 char *get_path_copy();
 
 /*forking*/
-int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n);
+int execute_by_forking(char **arr_of_words, char *user_prompt,
+char *sh_name, int cnt, int n);
 char *get_full_path(const char *cmd);
 void exec_cmd_with_execve(char *cmd, char **arr_of_words);
 void wait_kid_process(pid_t pid, int *status);
@@ -52,7 +53,8 @@ void *my_memcpy(void *destination, const void *source, size_t num_of_bytes);
 
 
 /**handle exit , setenv, unsetenv*/
-int handle_various_cmds(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n);
+int handle_various_cmds(char **arr_of_words, char *user_prompt,
+char *sh_name, int cnt, int n);
 void handle_the_env(void);
 int my_setenv(const char *env_name, const char *env_value,
 		int env_overwrite_val);
@@ -78,7 +80,8 @@ void p_the_err(char *cnt, char *sh_name, char *cmd, char *msg);
 int is_valid_word(char *str);
 char *intToString(int num);
 void handle_sig(int sig);
-void handle_exit_with_status(char **arr_of_words, char *user_prompt, char *sh_name, int cntr, int n);
+void handle_exit_with_status(char **arr_of_words, char *user_prompt,
+char *sh_name, int cntr, int n);
 void ex_err(char **arr_of_words, int cntr, char *sh_name);
 int my_isdig(int c);
 #endif
