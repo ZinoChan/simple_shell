@@ -51,11 +51,17 @@ char *intToString(int num)
 	return (str);
 }
 
+/**
+ * my_isdig - check if a character is a digit
+ *
+ * @c: the character to check
+ *
+ * Return: 1 if the character is a digit, 0 otherwise
+ */
 int my_isdig(int c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    else
-        return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
-

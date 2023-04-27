@@ -31,12 +31,15 @@ void execute_bin_ls(char **arr_of_words)
 /**
  * execute_by_forking - executes a command using the fork-exec
  * @arr_of_words: arr containing commands
+ * @user_prompt: user prompt
  * @sh_name: program name
  * @cnt: cmonad count
+ * @n: new line character flag
  * Return: err code
 */
 
-int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name, int cnt, int n)
+int execute_by_forking(char **arr_of_words, char *user_prompt, char *sh_name,
+int cnt, int n)
 {
 	char *cmd = NULL, *cmd_to_exec = NULL, *curr_cnt = NULL;
 	pid_t pid;
