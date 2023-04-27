@@ -9,7 +9,7 @@
  */
 int exec_multi_cmds(char *user_prompt, char *sh_name, int cnt)
 {
-	int num_of_cmds, num_of_words, i, j, ex_code;
+	int num_of_cmds, num_of_words, i, ex_code;
 	char **arr_of_cmds, **arr_of_words;
 
 	arr_of_cmds = split_string(user_prompt, ";", &num_of_cmds);
@@ -31,15 +31,8 @@ int exec_multi_cmds(char *user_prompt, char *sh_name, int cnt)
 		ex_code = execute_by_forking(arr_of_words, user_prompt, sh_name,
 		cnt, num_of_words);
 		free_words(arr_of_words, num_of_words);
-
-		/*Free each individual string in arr_of_cmds*/
-		for (j = 0; j < num_of_cmds; j++)
-		{
-			free(arr_of_cmds[j]);
-		}
 	}
 
-	/*free_words(arr_of_cmds, num_of_cmds);*/
-	free(arr_of_cmds);
+	free_words(arr_of_cmds, num_of_cmds);
 	return (ex_code);
 }

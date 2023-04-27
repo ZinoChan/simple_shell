@@ -10,11 +10,8 @@
 
 char **split_string(char *str, const char *str_separator, int *num_of_words)
 {
-	char *str_copy = NULL, *word = NULL, **arr_of_words = NULL;
+	char *str_copy = NULL, *word = NULL, **arr_of_words;
 	int i;
-	/*checks if str, str_separator, and num_of_words are valid pointers*/
-	if (!str || !str_separator || !num_of_words)
-		return (NULL);
 
 	str_copy = malloc(sizeof(char) * get_strlen(str) + 1);
 	if (str_copy == NULL)
@@ -25,7 +22,7 @@ char **split_string(char *str, const char *str_separator, int *num_of_words)
 	my_strcpy(str_copy, str);
 
 	*num_of_words = 0;
-	word = strtok(str_copy, str_separator);
+	word = strtok(str, str_separator);
 	while (word != NULL)
 	{
 		(*num_of_words)++;
@@ -35,7 +32,6 @@ char **split_string(char *str, const char *str_separator, int *num_of_words)
 	if (arr_of_words == NULL)
 	{
 		perror("Allocation Failed !");
-		free(str_copy);
 		return (NULL);
 	}
 	word = strtok(str_copy, str_separator);
@@ -45,8 +41,6 @@ char **split_string(char *str, const char *str_separator, int *num_of_words)
 		if (arr_of_words[i] == NULL)
 		{
 			perror("Allocation Failed !");
-			free_words(arr_of_words, i);
-			free(str_copy);
 			return (NULL);
 		}
 		my_strcpy(arr_of_words[i], word);
