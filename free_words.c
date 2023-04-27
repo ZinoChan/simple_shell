@@ -16,9 +16,10 @@ void free_words(char **words, int num_of_words)
 	for (i = 0; i < num_of_words; i++)
 	{
 		if (words[i] != NULL)
+		{
 			free(words[i]);
+			words[i] = NULL;
+		}
 	}
-	if (words != NULL)
-		free(words);
-
+	free(words);
 }
