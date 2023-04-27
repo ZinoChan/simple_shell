@@ -13,12 +13,11 @@ void handle_exit_with_status(char **arr_of_words, char *user_prompt,
 char *sh_name, int cntr, int n)
 {
 	int ex_stat, i = 0;
-	(void)n;
 
 	if (arr_of_words[1] == NULL)
 	{
 		free(user_prompt);
-		free(arr_of_words);
+		free_words(arr_of_words, n);
 		exit(EXIT_SUCCESS);
 	}
 
@@ -33,7 +32,7 @@ char *sh_name, int cntr, int n)
 		{
 			ex_stat = my_atoi(arr_of_words[1]);
 			free(user_prompt);
-			free(arr_of_words);
+			free_words(arr_of_words, n);
 			exit(ex_stat);
 		}
 	}

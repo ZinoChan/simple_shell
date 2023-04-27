@@ -1,5 +1,7 @@
 #include "shell.h"
 
+
+
 /**
  * execute_bin_ls - handle /bin/ls
  * @arr_of_words: arr containing commands
@@ -49,15 +51,9 @@ char *sh_name, int cnt, int n)
 	if (arr_of_words)
 	{
 		cmd = arr_of_words[0];
-		if (my_strcmp(cmd, "/bin/ls") == 0)
-		{
-			execute_bin_ls(arr_of_words);
-			return (0);
-		}
 		if (handle_various_cmds(arr_of_words, user_prompt, sh_name, cnt, n) == 1)
 			return (0);
 		cmd_to_exec = get_full_path(cmd);
-
 		if (!cmd_to_exec)
 		{
 			curr_cnt = intToString(cnt);
@@ -79,7 +75,6 @@ char *sh_name, int cnt, int n)
 		if (WIFEXITED(curr_status))
 			ex_code = (WEXITSTATUS(curr_status));
 	}
-	/*free(cmd_to_exec);*/
-	cmd_to_exec = NULL;
+	/*free(cmd_to_exec)*/;
 	return (ex_code);
 }
