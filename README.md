@@ -12,7 +12,6 @@ as well as examples of how to use the
 
 this lign will be deleted 
 
-The authors of the project:
 
 ### Authors
 - ZinoChan
