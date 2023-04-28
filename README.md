@@ -8,10 +8,6 @@ to install and run our program
 
 All practical use for this project will be uncluded, 
 this will include any available commands or options,
-as well as examples of how to use the
-
-this lign will be deleted 
-
 
 ### Authors
 - ZinoChan
