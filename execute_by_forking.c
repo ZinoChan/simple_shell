@@ -74,6 +74,10 @@ char *sh_name, int cnt, int n)
 		if (WIFEXITED(curr_status))
 			ex_code = (WEXITSTATUS(curr_status));
 	}
-	/*free(cmd_to_exec)*/
+	if (my_strncmp(*arr_of_words, "./", 2) != 0 && my_strncmp(*arr_of_words, "/", 1) != 0)
+	{
+		free(cmd_to_exec);
+	}
+
 	return (ex_code);
 }
