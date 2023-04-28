@@ -12,7 +12,8 @@ as well as examples of how to use the
 
 this lign will be deleted 
 
-The Contributing section gives potential contributors a way to contact the author(s) and to submit errata or enhancements to the project.
+The Contributing section gives potential contributors a way to contact 
+the author(s) and to submit errata or enhancements to the project.
 ### Authors
 - ZinoChan
 - emaoumaima
