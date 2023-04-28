@@ -27,6 +27,12 @@ int exec_multi_cmds(char *user_prompt, char *sh_name, int cnt)
 			perror("Error splitting command string\n");
 			continue;
 		}
+		if (num_of_words == 0)
+		{
+			free_words(arr_of_cmds, num_of_cmds);
+			free_words(arr_of_words, num_of_cmds);
+			return (0);
+		}
 		if (my_strcmp(arr_of_words[0], "exit") == 0)
 		{
 			free_words(arr_of_cmds, num_of_cmds);
