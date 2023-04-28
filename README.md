@@ -12,8 +12,8 @@ as well as examples of how to use the
 
 this lign will be deleted 
 
-Include all authors of a project. Optionally include an email address
-.
+The authors of the project:
+
 ### Authors
 - ZinoChan
 - emaoumaima
